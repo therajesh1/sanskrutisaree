@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom'
+import heroStorefront from './assets/hero-storefront.jpg'
 
 type Page = 'home' | 'collection' | 'pdp' | 'cart' | 'checkout' | 'about' | 'contact'
 type CartItem = { id: number; name: string; price: number; qty: number; img: string; fabric: string }
@@ -281,11 +282,12 @@ function HomePage({ setPage, wishlist, toggleWishlist, addToCart }: {
       {/* Hero */}
       <section className="relative h-screen min-h-[600px] flex items-end overflow-hidden bg-beige">
         <img
-          src="https://images.unsplash.com/photo-1739429942851-9083ee185d3d?w=1600&h=1000&fit=crop&auto=format"
-          alt="Indian woman in premium saree"
+          src={heroStorefront}
+          alt="Sanskruti Sarees flagship showroom"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/25 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-charcoal/60 via-charcoal/20 to-transparent pointer-events-none" />
         <div className="relative z-10 w-full px-8 lg:px-16 pb-20 lg:pb-24">
           <p className="section-label text-gold-light mb-5">The New Collection</p>
           <h1 className="hero-text text-ivory max-w-4xl mb-6">
